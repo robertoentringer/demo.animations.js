@@ -1,0 +1,47 @@
+{
+  "name": "demo.animations.js",
+  "version": "1.0.0",
+  "description": "Web Animations API based in Animations.js",
+  "author": "Roberto Entringer <r.entringer@gmail.com> (https://robertoentringer.com)",
+  "license": "MIT",
+  "keywords": [
+    "waapi",
+    "transitions",
+    "animations",
+    "web-animations-api",
+    "js"
+  ],
+  "repository": "github:robertoentringer/demo.animations.js",
+  "bugs": {
+    "url": "https://github.com/robertoentringer/demo.animations.js/issues",
+    "email": "r.entringer@gmail.com"
+  },
+  "homepage": "https://animations.now.sh/",
+  "main": "main.js",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "now": " now --target production && open https://animations.now.sh",
+    "serve:build": "php -S localhost:5005 -t ./dist"
+  },
+  "dependencies": {
+    "animations.js": "^1.0.0",
+    "vue": "^2.6.6",
+    "web-animations-js": "^2.3.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.5.0",
+    "@vue/cli-plugin-eslint": "^3.5.0",
+    "@vue/cli-service": "^3.5.0",
+    "@vue/eslint-config-prettier": "^4.0.1",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.8.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "fibers": "^3.1.1",
+    "normalize.css": "^8.0.1",
+    "sass": "^1.17.2",
+    "sass-loader": "^7.1.0",
+    "vue-template-compiler": "^2.5.21"
+  }
+}

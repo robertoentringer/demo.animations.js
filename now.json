@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "public": false,
+  "name": "animations",
+  "alias": ["animations"],
+  "regions": ["bru1"],
+  "builds": [{ "src": "dist/**", "use": "@now/static" }],
+  "routes": [
+    { "src": "^/css/(.*)", "dest": "/dist/css/$1" },
+    { "src": "^/js/(.*)", "dest": "/dist/js/$1" },
+    { "src": "/robots.txt", "dest": "/dist/robots.txt" },
+    { "src": "/favicon.ico", "dest": "/dist/favicon.ico" },
+    { "src": ".*", "dest": "/dist/index.html" }
+  ]
+}
