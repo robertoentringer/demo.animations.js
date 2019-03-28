@@ -458,27 +458,23 @@ button {
 #app {
   padding: 0 1rem;
 }
-
 #header {
   margin-top: 8vh;
   margin-bottom: 4vh;
 }
-
 #footer {
   margin-top: 4vh;
   padding: 2vh 0;
   border-top: 1px solid $border-color;
 }
-
 #output {
   margin-top: 2vh;
-  margin-bottom: 2vh;
+  margin-bottom: 4vh;
 }
-
 #resources {
   text-align: left;
   h2 {
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
   }
 }
 #resources-list {
@@ -492,11 +488,9 @@ button {
     display: inline-block;
     padding: 0 0.5rem;
     font-size: 1.5rem;
-    line-height: 2;
     vertical-align: middle;
   }
 }
-
 #header,
 #control,
 #output,
