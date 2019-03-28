@@ -176,7 +176,7 @@
       <ul id="resources-list">
         <li>
           <a
-            title="Resources Web Animations API - Web APIs | MDN"
+            title="MDN - Web Animations API"
             href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API"
             >MDN - Web Animations API</a
           >
@@ -200,7 +200,7 @@
         </li>
         <li>
           <a
-            title="Tutorial series on the Web Animations API  by Daniel C. Wilson"
+            title="Tutorial series on the Web Animations API by Daniel C. Wilson"
             href="https://danielcwilson.com/tags/web-animations-api/"
             >Daniel C. Wilson</a
           >
