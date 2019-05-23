@@ -22,26 +22,27 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "now": " now --target production && open https://animations.now.sh",
+    "now:prod": "npm run build && now --target production && open https://animations.now.sh",
+    "now:staging": "npm run build && now --target staging && open https://animations.rentringer.now.sh",
     "serve:build": "php -S localhost:5005 -t ./dist"
   },
   "dependencies": {
-    "animations.js": "^1.0.3",
+    "animations.js": "^1.0.5",
+    "prismjs": "^1.16.0",
     "vue": "^2.6.6",
-    "web-animations-js": "^2.3.1",
-    "prismjs": "^1.16.0"
+    "web-animations-js": "^2.3.1"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.5.0",
-    "@vue/cli-plugin-eslint": "^3.5.0",
-    "@vue/cli-service": "^3.5.0",
+    "@vue/cli-plugin-babel": "^3.7.0",
+    "@vue/cli-plugin-eslint": "^3.7.0",
+    "@vue/cli-service": "^3.7.0",
     "@vue/eslint-config-prettier": "^4.0.1",
     "babel-eslint": "^10.0.1",
-    "eslint": "^5.8.0",
+    "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
-    "fibers": "^3.1.1",
+    "fibers": "^4.0.1",
     "normalize.css": "^8.0.1",
-    "sass": "^1.17.2",
+    "sass": "^1.20.1",
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.5.21"
   }
