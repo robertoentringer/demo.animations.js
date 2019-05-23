@@ -484,6 +484,9 @@ button {
 }
 #resources-list li {
   display: inline;
+  a {
+    padding: 15px 0;
+  }
   span {
     display: inline-block;
     padding: 0 0.5rem;
