@@ -247,9 +247,9 @@
 </template>
 
 <script>
-import "web-animations-js";
-import Prism from "prismjs";
-import { groups, animations } from "animations.js";
+import "web-animations-js"
+import Prism from "prismjs"
+import { groups, animations } from "animations.js"
 export default {
   name: "app",
   frameID: null,
@@ -274,127 +274,127 @@ export default {
       fills: ["none", "forwards", "backwards", "both", "auto"],
       isReverse: false,
       timeline: 0
-    };
+    }
   },
   mounted() {
-    this.effect = this.effect || this.effects[this.index];
-    this.index = this.effects.indexOf(this.effect);
-    this.anime();
+    this.effect = this.effect || this.effects[this.index]
+    this.index = this.effects.indexOf(this.effect)
+    this.anime()
   },
   computed: {
     outputKeyframes() {
-      let code = `const ${this.effect} = ${this.format(this.keyframes)};`;
-      code = code.replace(/"([^(")"]+)":/g, "$1:");
-      return Prism.highlight(code, Prism.languages.javascript, "javascript");
+      let code = `const ${this.effect} = ${this.format(this.keyframes)};`
+      code = code.replace(/"([^(")"]+)":/g, "$1:")
+      return Prism.highlight(code, Prism.languages.javascript, "javascript")
     },
     output() {
-      let code = `const timing = ${this.format(this.timing)};`;
-      code += `\n\nelement.animate(\n  ${this.effect},\n  timing\n);`;
-      code = code.replace(/"([^(")"]+)":/g, "$1:");
-      return Prism.highlight(code, Prism.languages.javascript, "javascript");
+      let code = `const timing = ${this.format(this.timing)};`
+      code += `\n\nelement.animate(\n  ${this.effect},\n  timing\n);`
+      code = code.replace(/"([^(")"]+)":/g, "$1:")
+      return Prism.highlight(code, Prism.languages.javascript, "javascript")
     },
     size() {
-      return this.effects.length;
+      return this.effects.length
     },
     effects() {
-      return [].concat(...Object.values(this.groups));
+      return [].concat(...Object.values(this.groups))
     },
     keyframes() {
-      return this.animations[this.effect];
+      return this.animations[this.effect]
     }
   },
   filters: {
     label(val) {
-      return val.charAt(0).toUpperCase() + val.slice(1).replace("_", " ");
+      return val.charAt(0).toUpperCase() + val.slice(1).replace("_", " ")
     }
   },
   methods: {
     format(content) {
-      return JSON.stringify(content, null, 2);
+      return JSON.stringify(content, null, 2)
     },
     selectAnimes(e) {
-      this.index = this.effects.indexOf(e.target.value);
-      this.effect = e.target.value;
-      this.anime();
+      this.index = this.effects.indexOf(e.target.value)
+      this.effect = e.target.value
+      this.anime()
     },
     selectIterations(e) {
       this.timing.iterations =
-        e.target.value === "Infinity" ? Infinity : Number(e.target.value);
-      this.anime();
+        e.target.value === "Infinity" ? Infinity : Number(e.target.value)
+      this.anime()
     },
     selectDelay(e) {
-      this.timing.delay = Number(e.target.value);
-      this.anime();
+      this.timing.delay = Number(e.target.value)
+      this.anime()
     },
     selectFill(e) {
-      this.timing.fill = e.target.value;
-      this.anime();
+      this.timing.fill = e.target.value
+      this.anime()
     },
     duration(e) {
-      this.timing.duration = e.target.value * 1;
-      this.anime();
+      this.timing.duration = e.target.value * 1
+      this.anime()
     },
     play() {
-      this.animate.play();
-      this.isPlay = true;
-      this.adjustScrubber();
+      this.animate.play()
+      this.isPlay = true
+      this.adjustScrubber()
     },
     pause() {
-      this.animate.pause();
-      this.isPlay = false;
-      cancelAnimationFrame(this.$options.frameID);
+      this.animate.pause()
+      this.isPlay = false
+      cancelAnimationFrame(this.$options.frameID)
     },
     reverse() {
-      this.animate.reverse();
-      this.isPlay = true;
-      this.isReverse = !this.isReverse;
-      this.adjustScrubber();
+      this.animate.reverse()
+      this.isPlay = true
+      this.isReverse = !this.isReverse
+      this.adjustScrubber()
     },
     next() {
-      this.index = this.index == this.size - 1 ? 0 : this.index + 1;
-      this.effect = this.effects[this.index];
-      this.anime();
+      this.index = this.index == this.size - 1 ? 0 : this.index + 1
+      this.effect = this.effects[this.index]
+      this.anime()
     },
     prev() {
-      this.index = this.index == 0 ? this.size - 1 : this.index - 1;
-      this.effect = this.effects[this.index];
-      this.anime();
+      this.index = this.index == 0 ? this.size - 1 : this.index - 1
+      this.effect = this.effects[this.index]
+      this.anime()
     },
     anime() {
-      if (this.animate) this.animate.cancel();
-      this.animate = this.$refs.anime.animate(this.keyframes, this.timing);
-      this.adjustScrubber();
-      this.animate.playbackRate = this.playbackRate;
-      this.isPlay = true;
-      if (this.isReverse) this.animate.reverse();
-      this.animate.onfinish = this.finish;
+      if (this.animate) this.animate.cancel()
+      this.animate = this.$refs.anime.animate(this.keyframes, this.timing)
+      this.adjustScrubber()
+      this.animate.playbackRate = this.playbackRate
+      this.isPlay = true
+      if (this.isReverse) this.animate.reverse()
+      this.animate.onfinish = this.finish
     },
     speed(e) {
-      this.playbackRate = Number(e.target.value);
-      this.animate.playbackRate = this.playbackRate;
-      if (this.animate.playState !== "running") this.play();
+      this.playbackRate = Number(e.target.value)
+      this.animate.playbackRate = this.playbackRate
+      if (this.animate.playState !== "running") this.play()
     },
     finish() {
-      this.isPlay = false;
-      this.timeline = this.animate.currentTime;
-      cancelAnimationFrame(this.$options.frameID);
+      this.isPlay = false
+      this.timeline = this.animate.currentTime
+      cancelAnimationFrame(this.$options.frameID)
     },
     scrubber(e) {
-      this.timeline = Number(e.target.value);
-      this.animate.currentTime = this.timeline * this.timing.iterations;
-      this.animate.pause();
-      cancelAnimationFrame(this.$options.frameID);
+      this.timeline = Number(e.target.value)
+      this.animate.currentTime = this.timeline * this.timing.iterations
+      this.animate.pause()
+      cancelAnimationFrame(this.$options.frameID)
     },
     adjustScrubber() {
       if (this.timeline && Math.abs(this.timeline) == this.animate.currentTime)
-        this.finish();
+        this.finish()
       else
         this.timeline =
-          this.animate.currentTime / this.timing.iterations - this.timing.delay;
-      this.$options.frameID = requestAnimationFrame(this.adjustScrubber);
+          this.animate.currentTime / this.timing.iterations - this.timing.delay
+      this.$options.frameID = requestAnimationFrame(this.adjustScrubber)
     }
   }
-};
+}
 </script>
 
 <style src="normalize.css"></style>
