@@ -9,6 +9,7 @@
     { "src": "^/css/(.*)", "dest": "/css/$1" },
     { "src": "^/js/(.*)", "dest": "/js/$1" },
     { "src": "/robots.txt", "dest": "/robots.txt" },
+    { "src": "/manifest.json", "dest": "/manifest.json" },
     { "src": "/favicon.ico", "dest": "/favicon.ico" },
     { "src": ".*", "dest": "/index.html" }
   ]
