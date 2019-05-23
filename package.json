@@ -4,6 +4,7 @@
   "description": "Web Animations API based in Animations.js",
   "author": "Roberto Entringer <r.entringer@gmail.com> (https://robertoentringer.com)",
   "scripts": {
+    "prebuild": "npm run lint",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
