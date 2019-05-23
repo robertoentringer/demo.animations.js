@@ -4,12 +4,12 @@
   "name": "animations",
   "alias": ["animations"],
   "regions": ["bru1"],
-  "builds": [{ "src": "dist/**", "use": "@now/static" }],
+  "builds": [{ "src": "package.json", "use": "@now/static-build" }],
   "routes": [
-    { "src": "^/css/(.*)", "dest": "/dist/css/$1" },
-    { "src": "^/js/(.*)", "dest": "/dist/js/$1" },
-    { "src": "/robots.txt", "dest": "/dist/robots.txt" },
-    { "src": "/favicon.ico", "dest": "/dist/favicon.ico" },
-    { "src": ".*", "dest": "/dist/index.html" }
+    { "src": "^/css/(.*)", "dest": "/css/$1" },
+    { "src": "^/js/(.*)", "dest": "/js/$1" },
+    { "src": "/robots.txt", "dest": "/robots.txt" },
+    { "src": "/favicon.ico", "dest": "/favicon.ico" },
+    { "src": ".*", "dest": "/index.html" }
   ]
 }

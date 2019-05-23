@@ -22,8 +22,9 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "now:prod": "npm run build && now --target production && open https://animations.now.sh",
-    "now:staging": "npm run build && now --target staging && open https://animations.rentringer.now.sh",
+    "now-build": "npm run build",
+    "now:prod": "now --target production && open https://animations.now.sh",
+    "now:staging": "now --target staging && open https://animations.rentringer.now.sh",
     "serve:build": "php -S localhost:5005 -t ./dist"
   },
   "dependencies": {
