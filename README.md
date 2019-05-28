@@ -2,9 +2,9 @@
 
 The Web Animations API lets us construct animations and control their playback with JavaScript.
 
-Demo : https://animations.now.sh
-
-Animations : https://github.com/robertoentringer/animations.js
+Demo : https://animations.now.sh    
+Npm package : https://www.npmjs.com/package/animations.js   
+Animations : https://github.com/robertoentringer/animations.js    
 
 [![screenshot.png](screenshot.png?raw=true)](https://animations.now.sh)
 
