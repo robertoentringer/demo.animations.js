@@ -6,7 +6,7 @@ Demo : https://animations.now.sh
 Npm package : https://www.npmjs.com/package/animations.js   
 Animations : https://github.com/robertoentringer/animations.js    
 
-[![screenshot.png](screenshot.png?raw=true)](https://animations.now.sh)
+[![screenshot.png](screenshot.png)](https://animations.now.sh)
 
 ## Resources
 
