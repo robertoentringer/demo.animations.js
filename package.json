@@ -1,54 +1,30 @@
 {
   "name": "demo.animations.js",
-  "version": "1.0.0",
-  "description": "Web Animations API based in Animations.js",
-  "author": "Roberto Entringer <r.entringer@gmail.com> (https://robertoentringer.com)",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "prebuild": "npm run lint",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "now-build": "npm run build",
-    "now:prod": "now --target production && open https://animations.now.sh",
-    "now:staging": "now --target staging && open https://animations.rentringer.now.sh",
-    "serve:build": "php -S localhost:5005 -t ./dist"
+    "lint": "vue-cli-service lint"
   },
-  "main": "main.js",
   "dependencies": {
-    "animations.js": "^1.0.5",
-    "prismjs": "^1.16.0",
+    "core-js": "^2.6.5",
     "register-service-worker": "^1.6.2",
-    "vue": "^2.6.6",
-    "web-animations-js": "^2.3.1"
+    "vue": "^2.6.10"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.7.0",
-    "@vue/cli-plugin-eslint": "^3.7.0",
-    "@vue/cli-plugin-pwa": "^3.7.0",
-    "@vue/cli-service": "^3.7.0",
-    "@vue/eslint-config-prettier": "^4.0.1",
+    "@vue/cli-plugin-babel": "^3.11.0",
+    "@vue/cli-plugin-eslint": "^3.11.0",
+    "@vue/cli-plugin-pwa": "^3.11.0",
+    "@vue/cli-service": "^3.11.0",
+    "@vue/eslint-config-prettier": "^5.0.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
-    "eslint-plugin-html": "^5.0.5",
+    "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-vue": "^5.0.0",
-    "fibers": "^4.0.1",
-    "normalize.css": "^8.0.1",
-    "sass": "^1.20.1",
+    "node-sass": "^4.9.0",
+    "prettier": "^1.18.2",
     "sass-loader": "^7.1.0",
-    "vue-template-compiler": "^2.5.21"
-  },
-  "bugs": {
-    "url": "https://github.com/robertoentringer/demo.animations.js/issues",
-    "email": "r.entringer@gmail.com"
-  },
-  "homepage": "https://animations.now.sh/",
-  "keywords": [
-    "waapi",
-    "transitions",
-    "animations",
-    "web-animations-api",
-    "js"
-  ],
-  "license": "MIT",
-  "repository": "github:robertoentringer/demo.animations.js"
+    "vue-template-compiler": "^2.6.10"
+  }
 }

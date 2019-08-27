@@ -6,10 +6,7 @@
       </div>
       <h2>
         Web Animations API based in
-        <a
-          title="Animate.css by Daniel Eden"
-          href="https://daneden.github.io/animate.css/"
-        >
+        <a title="Animate.css by Daniel Eden" href="https://daneden.github.io/animate.css/">
           Animate.css
         </a>
       </h2>
@@ -18,11 +15,7 @@
     <div id="control">
       <label>
         <select title="Effects" name="effects" @input="selectAnimes">
-          <optgroup
-            v-for="(val, key) in groups"
-            :key="key"
-            :label="key | label"
-          >
+          <optgroup v-for="(val, key) in groups" :key="key" :label="key | label">
             <option
               v-for="(anime, index) in val"
               :selected="effect == anime"
@@ -76,13 +69,7 @@
           @input="selectFill"
         >
           <optgroup label="Fill">
-            <option
-              v-for="(fill, key) in fills"
-              :selected="timing.fill == fill"
-              :value="fill"
-              :key="key"
-              v-text="fill"
-            >
+            <option v-for="(fill, key) in fills" :selected="timing.fill == fill" :value="fill" :key="key" v-text="fill">
             </option>
           </optgroup>
         </select>
@@ -103,11 +90,7 @@
         </button>
       </label>
       <label>
-        <button
-          title="Suspends playing of an animation."
-          :class="{ active: !isPlay }"
-          @click="pause"
-        >
+        <button title="Suspends playing of an animation." :class="{ active: !isPlay }" @click="pause">
           Pause
         </button>
       </label>
@@ -121,10 +104,7 @@
         </button></label
       >
       <label hidden>
-        <button
-          v-text="Number(timing.duration / 1000).toFixed(1) + 's'"
-          title="Duration animation"
-        ></button>
+        <button v-text="Number(timing.duration / 1000).toFixed(1) + 's'" title="Duration animation"></button>
       </label>
       <div class="ranges">
         <label hidden>
@@ -207,11 +187,7 @@
           <span>•</span>
         </li>
         <li>
-          <a
-            title="Animate.css by Daniel Eden"
-            href="http://daneden.github.io/animate.css"
-            >Animate.css
-          </a>
+          <a title="Animate.css by Daniel Eden" href="http://daneden.github.io/animate.css">Animate.css </a>
         </li>
       </ul>
     </div>
@@ -224,23 +200,13 @@
           >Download Animations.js</a
         >
         or
-        <a
-          title="View on GitHub"
-          href="https://github.com/robertoentringer/animations.js"
-          >View on GitHub</a
-        >. <small>🛠</small> with
-        <a
-          title="Vue.js - The Progressive JavaScript Framework."
-          href="https://vuejs.org/"
-        >
+        <a title="View on GitHub" href="https://github.com/robertoentringer/animations.js">View on GitHub</a>.
+        <small>🛠</small> with
+        <a title="Vue.js - The Progressive JavaScript Framework." href="https://vuejs.org/">
           Vue.js
         </a>
         <small>❤️</small>. By
-        <a
-          title="Roberto Entringer Full-stack Web Developer"
-          href="https://robertoentringer.com"
-          >Roberto Entringer</a
-        >.
+        <a title="Roberto Entringer Full-stack Web Developer" href="https://robertoentringer.com">Roberto Entringer</a>.
       </p>
     </footer>
   </div>
@@ -318,8 +284,7 @@ export default {
       this.anime()
     },
     selectIterations(e) {
-      this.timing.iterations =
-        e.target.value === "Infinity" ? Infinity : Number(e.target.value)
+      this.timing.iterations = e.target.value === "Infinity" ? Infinity : Number(e.target.value)
       this.anime()
     },
     selectDelay(e) {
@@ -386,11 +351,8 @@ export default {
       cancelAnimationFrame(this.$options.frameID)
     },
     adjustScrubber() {
-      if (this.timeline && Math.abs(this.timeline) == this.animate.currentTime)
-        this.finish()
-      else
-        this.timeline =
-          this.animate.currentTime / this.timing.iterations - this.timing.delay
+      if (this.timeline && Math.abs(this.timeline) == this.animate.currentTime) this.finish()
+      else this.timeline = this.animate.currentTime / this.timing.iterations - this.timing.delay
       this.$options.frameID = requestAnimationFrame(this.adjustScrubber)
     }
   }
