@@ -9,6 +9,14 @@
     "deploy:prod": "now --prod",
     "deploy:staging": "now"
   },
+  "now": {
+    "version": 2,
+    "public": true,
+    "name": "animations",
+    "alias": [
+      "animations"
+    ]
+  },
   "dependencies": {
     "animations.js": "^1.0.7",
     "core-js": "^2.6.5",
