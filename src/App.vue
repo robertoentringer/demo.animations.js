@@ -69,7 +69,13 @@
           @input="selectFill"
         >
           <optgroup label="Fill">
-            <option v-for="(fill, key) in fills" :selected="timing.fill == fill" :value="fill" :key="key" v-text="fill">
+            <option
+              v-for="(fill, key) in fills"
+              :selected="timing.fill == fill"
+              :value="fill"
+              :key="key"
+              v-text="fill"
+            >
             </option>
           </optgroup>
         </select>
@@ -90,7 +96,11 @@
         </button>
       </label>
       <label>
-        <button title="Suspends playing of an animation." :class="{ active: !isPlay }" @click="pause">
+        <button
+          title="Suspends playing of an animation."
+          :class="{ active: !isPlay }"
+          @click="pause"
+        >
           Pause
         </button>
       </label>
@@ -104,7 +114,10 @@
         </button></label
       >
       <label hidden>
-        <button v-text="Number(timing.duration / 1000).toFixed(1) + 's'" title="Duration animation"></button>
+        <button
+          v-text="Number(timing.duration / 1000).toFixed(1) + 's'"
+          title="Duration animation"
+        ></button>
       </label>
       <div class="ranges">
         <label hidden>
@@ -187,7 +200,9 @@
           <span>•</span>
         </li>
         <li>
-          <a title="Animate.css by Daniel Eden" href="http://daneden.github.io/animate.css">Animate.css </a>
+          <a title="Animate.css by Daniel Eden" href="http://daneden.github.io/animate.css"
+            >Animate.css
+          </a>
         </li>
       </ul>
     </div>
@@ -200,24 +215,27 @@
           >Download Animations.js</a
         >
         or
-        <a title="View on GitHub" href="https://github.com/robertoentringer/animations.js">View on GitHub</a>.
-        <small>🛠</small> with
+        <a title="View on GitHub" href="https://github.com/robertoentringer/animations.js"
+          >View on GitHub</a
+        >. <small>🛠</small> with
         <a title="Vue.js - The Progressive JavaScript Framework." href="https://vuejs.org/">
           Vue.js
         </a>
         <small>❤️</small>. By
-        <a title="Roberto Entringer Full-stack Web Developer" href="https://robertoentringer.com">Roberto Entringer</a>.
+        <a title="Roberto Entringer Full-stack Web Developer" href="https://robertoentringer.com"
+          >Roberto Entringer</a
+        >.
       </p>
     </footer>
   </div>
 </template>
 
 <script>
-import "web-animations-js"
-import Prism from "prismjs"
-import { groups, animations } from "animations.js"
+import 'web-animations-js'
+import Prism from 'prismjs'
+import { groups, animations } from 'animations.js'
 export default {
-  name: "app",
+  name: 'app',
   frameID: null,
   data() {
     return {
@@ -226,7 +244,7 @@ export default {
       effect: null,
       timing: {
         duration: 1000,
-        fill: "forwards",
+        fill: 'forwards',
         iterations: 1,
         delay: 0,
         endDelay: 0
@@ -235,9 +253,9 @@ export default {
       index: 0,
       playbackRate: 1,
       isPlay: true,
-      iterations: [1, 2, 3, 4, 5, "Infinity"],
+      iterations: [1, 2, 3, 4, 5, 'Infinity'],
       delays: [0, 500, 1000, 1500, 2000, 2500, 3000],
-      fills: ["none", "forwards", "backwards", "both", "auto"],
+      fills: ['none', 'forwards', 'backwards', 'both', 'auto'],
       isReverse: false,
       timeline: 0
     }
@@ -250,14 +268,14 @@ export default {
   computed: {
     outputKeyframes() {
       let code = `const ${this.effect} = ${this.format(this.keyframes)};`
-      code = code.replace(/"([^(")"]+)":/g, "$1:")
-      return Prism.highlight(code, Prism.languages.javascript, "javascript")
+      code = code.replace(/"([^(")"]+)":/g, '$1:')
+      return Prism.highlight(code, Prism.languages.javascript, 'javascript')
     },
     output() {
       let code = `const timing = ${this.format(this.timing)};`
       code += `\n\nelement.animate(\n  ${this.effect},\n  timing\n);`
-      code = code.replace(/"([^(")"]+)":/g, "$1:")
-      return Prism.highlight(code, Prism.languages.javascript, "javascript")
+      code = code.replace(/"([^(")"]+)":/g, '$1:')
+      return Prism.highlight(code, Prism.languages.javascript, 'javascript')
     },
     size() {
       return this.effects.length
@@ -271,7 +289,7 @@ export default {
   },
   filters: {
     label(val) {
-      return val.charAt(0).toUpperCase() + val.slice(1).replace("_", " ")
+      return val.charAt(0).toUpperCase() + val.slice(1).replace('_', ' ')
     }
   },
   methods: {
@@ -284,7 +302,7 @@ export default {
       this.anime()
     },
     selectIterations(e) {
-      this.timing.iterations = e.target.value === "Infinity" ? Infinity : Number(e.target.value)
+      this.timing.iterations = e.target.value === 'Infinity' ? Infinity : Number(e.target.value)
       this.anime()
     },
     selectDelay(e) {
@@ -337,7 +355,7 @@ export default {
     speed(e) {
       this.playbackRate = Number(e.target.value)
       this.animate.playbackRate = this.playbackRate
-      if (this.animate.playState !== "running") this.play()
+      if (this.animate.playState !== 'running') this.play()
     },
     finish() {
       this.isPlay = false
@@ -404,7 +422,7 @@ button {
   text-align-last: center;
   font-size: 1rem;
   width: 100%;
-  &[name="effects"] {
+  &[name='effects'] {
     text-transform: capitalize;
   }
   background-color: $bg-button;
