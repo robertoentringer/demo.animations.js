@@ -39,8 +39,7 @@
               :value="iteration"
               :key="key"
               v-text="iteration"
-            >
-            </option>
+            ></option>
           </optgroup>
         </select>
       </label>
@@ -57,8 +56,7 @@
               :value="delay"
               :key="key"
               v-text="delay + ' ms'"
-            >
-            </option>
+            ></option>
           </optgroup>
         </select>
       </label>
@@ -75,8 +73,7 @@
               :value="fill"
               :key="key"
               v-text="fill"
-            >
-            </option>
+            ></option>
           </optgroup>
         </select>
       </label>
