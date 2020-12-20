@@ -11,7 +11,7 @@
     "vercel:staging": "vercel"
   },
   "dependencies": {
-    "animations.js": "^1.0.9",
+    "animations.js": "^1.0.10",
     "core-js": "^3.8.1",
     "normalize.css": "^8.0.1",
     "prismjs": "^1.22.0",
