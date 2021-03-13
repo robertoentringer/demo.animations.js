@@ -22,5 +22,5 @@ https://css-tricks.com/css-animations-vs-web-animations-api/
 Daniel C. Wilson - Tutorial series on the Web Animations API<br>
 https://danielcwilson.com/tags/web-animations-api/
 
-Animate.css by Daniel Eden<br>
+Animate.css by Daniel Eden <br>
 http://daneden.github.io/animate.css
